@@ -25,7 +25,7 @@ Quality/Use=false
 [application]
 
 config/name="Flappy bird"
-run/main_scene="res://Main game/Scenes/World.tscn"
+run/main_scene="res://Main game/Scenes/SceneHolder.tscn"
 config/icon="res://icon.png"
 
 [display]
