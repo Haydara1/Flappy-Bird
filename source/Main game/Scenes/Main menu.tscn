@@ -79,19 +79,19 @@ centered = false
 [node name="YellowBird" type="AnimatedSprite" parent="."]
 position = Vector2( 238, 293 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="BlueBird" type="AnimatedSprite" parent="."]
 position = Vector2( 419, 294 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="GreenBird" type="AnimatedSprite" parent="."]
 position = Vector2( 61, 291 )
 frames = SubResource( 12 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="."]
