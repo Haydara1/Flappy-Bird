@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "player",
 "language": "GDScript",
 "path": "res://Characters/Player/player.gd"
+}, {
+"base": "RigidBody2D",
+"class": "reverse_player",
+"language": "GDScript",
+"path": "res://Characters/Player/reverse_player.gd"
 } ]
 _global_script_class_icons={
-"player": ""
+"player": "",
+"reverse_player": ""
 }
 
 [Rendering]
@@ -32,8 +38,9 @@ config/icon="res://icon.png"
 
 window/size/width=480
 window/size/height=854
+window/size/resizable=false
 window/handheld/orientation="portrait"
-window/stretch/aspect="keep"
+window/stretch/aspect="expand"
 
 [global]
 
@@ -71,6 +78,10 @@ flap={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
