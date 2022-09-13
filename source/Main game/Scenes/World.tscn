@@ -14,6 +14,7 @@ script = ExtResource( 5 )
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="MenuLayer" parent="." instance=ExtResource( 7 )]
+game = "Classic"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 1 )
