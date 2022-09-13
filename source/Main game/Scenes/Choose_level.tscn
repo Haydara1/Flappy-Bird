@@ -55,3 +55,14 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 text = "CLASSIC"
+
+[node name="ReverseButton" parent="." instance=ExtResource( 1 )]
+margin_left = 147.0
+margin_top = 228.0
+margin_right = 335.0
+margin_bottom = 288.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "REVERSE"
