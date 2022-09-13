@@ -5,7 +5,11 @@ onready var obstacle_spawner = $ObstacleSpawner
 onready var ground = $Ground
 onready var menu_layer = $MenuLayer
 
+var greenBird = preload("res://assets/textures/GreenBird.png")
+var yellowBird = preload("res://assets/textures/bird.png")
+var blueBird = preload("res://assets/textures/BlueBird.png")
 
+export var colour = ""
 
 var score = 0 setget set_score
 var highscore = 0
@@ -48,3 +52,13 @@ func game_over():
 
 func _on_MenuLayer_start_game():
 	new_game()
+
+
+func setColour() -> void:
+	if colour == "g":
+		$player/Sprite.set_texture(greenBird)
+	elif colour == "y":
+		$player/Sprite.set_texture(yellowBird)
+	elif colour == "b":
+		$player/Sprite.set_texture(blueBird)
+
