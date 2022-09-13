@@ -61,3 +61,7 @@ anims/scroll = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2( 240, 79 )
 shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 240, -773 )
+shape = SubResource( 4 )
