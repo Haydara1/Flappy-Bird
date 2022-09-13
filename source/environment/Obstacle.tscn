@@ -24,7 +24,7 @@ rotation = 3.14159
 position = Vector2( 17, -6 )
 shape = SubResource( 1 )
 
-[node name="point" type="AudioStreamPlayer2D" parent="."]
+[node name="point" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="Wall" to="." method="_on_Wall_body_entered"]
