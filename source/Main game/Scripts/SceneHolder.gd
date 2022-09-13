@@ -39,6 +39,10 @@ func ClassicGame():
 	get_child(get_child_count() - 1).colour = colour
 	get_child(get_child_count() - 1).setColour()
 
+func Restart(node):
+	remove_child(get_child(get_child_count() - 1))
+	if node == "Classic":
+		ClassicGame()
 
 func HalfAnimatinon():
 	emit_signal("HalfAnimation")
