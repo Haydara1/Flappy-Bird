@@ -97,6 +97,15 @@ visible = false
 
 [node name="Main menu" parent="." instance=ExtResource( 2 )]
 
+[node name="YellowBird" parent="Main menu" index="0"]
+frame = 2
+
+[node name="BlueBird" parent="Main menu" index="1"]
+frame = 2
+
+[node name="GreenBird" parent="Main menu" index="2"]
+frame = 2
+
 [node name="SceneFade" type="Node2D" parent="."]
 
 [node name="BlackRect" type="ColorRect" parent="SceneFade"]
