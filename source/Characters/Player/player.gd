@@ -4,6 +4,7 @@ class_name player
 signal die
 
 export var FLAP_FORCE = -200
+export var colour = ""
 
 const MAX_ROTATION_DEGREES = -30.0
 
@@ -50,4 +51,3 @@ func die():
 	hit.play()
 	emit_signal("die")
 	
-
