@@ -9,7 +9,7 @@ var greenBird = preload("res://assets/textures/GreenBird.png")
 var yellowBird = preload("res://assets/textures/bird.png")
 var blueBird = preload("res://assets/textures/BlueBird.png")
 
-const SAVE_FILE_PATH = "user://World.save"
+const SAVE_FILE_PATH = "user://Reverse.save"
 
 export var colour = ""
 
@@ -36,7 +36,7 @@ func _on_obstacle_created(obs):
 
 
 func _on_DeathZone_body_entered(body):
-	if body is player:
+	if body is reverse_player:
 		if body.has_method("die"):
 			body.die()
 
