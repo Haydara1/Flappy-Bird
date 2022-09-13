@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://assets/textures/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/flappyfont.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/textures/GreenBird.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/BlueBird.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/bird.png" type="Texture" id=5]
+[ext_resource path="res://Main game/Scenes/Custom controls/Custom button.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -72,26 +72,19 @@ font_data = ExtResource( 2 )
 
 [node name="Main menu" type="Node2D"]
 
-[node name="Background" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-centered = false
-
 [node name="YellowBird" type="AnimatedSprite" parent="."]
 position = Vector2( 238, 293 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="BlueBird" type="AnimatedSprite" parent="."]
 position = Vector2( 419, 294 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="GreenBird" type="AnimatedSprite" parent="."]
 position = Vector2( 61, 291 )
 frames = SubResource( 12 )
-frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="."]
@@ -106,3 +99,24 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Yellow" parent="." instance=ExtResource( 7 )]
+margin_left = 200.0
+margin_top = 340.0
+margin_right = 275.0
+margin_bottom = 375.0
+text = "YELLOW"
+
+[node name="Green" parent="." instance=ExtResource( 7 )]
+margin_left = 28.0
+margin_top = 341.0
+margin_right = 99.0
+margin_bottom = 376.0
+text = "GREEN"
+
+[node name="Blue" parent="." instance=ExtResource( 7 )]
+margin_left = 377.0
+margin_top = 340.0
+margin_right = 454.0
+margin_bottom = 375.0
+text = "BLUE"
