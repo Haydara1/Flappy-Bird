@@ -13,12 +13,12 @@ func _physics_process(delta):
 
 
 func _on_Wall_body_entered(body):
-	if body is player:
+	if body is player or body is reverse_player:
 		if body.has_method("die"):
 			body.die()
 
 
 func _on_ScoreArea_body_exited(body):
-	if body is player:
+	if body is player or body is reverse_player:
 		point.play()
 		emit_signal("score")
