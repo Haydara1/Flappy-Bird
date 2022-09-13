@@ -60,6 +60,17 @@ custom_fonts/font = ExtResource( 3 )
 text = "SCORE: 0"
 align = 1
 
+[node name="HighScoreLabel" type="Label" parent="GameOverMenu/VBoxContainer"]
+margin_top = 73.0
+margin_right = 316.0
+margin_bottom = 126.0
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 11
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
+text = "HIGH: 0"
+align = 1
+
 [node name="RestartButton" type="Button" parent="GameOverMenu/VBoxContainer"]
 margin_top = 146.0
 margin_right = 316.0
@@ -70,6 +81,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MainMenu" type="Button" parent="GameOverMenu/VBoxContainer"]
+margin_top = 225.0
+margin_right = 316.0
+margin_bottom = 284.0
+custom_fonts/font = ExtResource( 3 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="pressed" from="GameOverMenu/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="GameOverMenu/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
