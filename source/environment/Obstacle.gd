@@ -16,7 +16,6 @@ func _on_Wall_body_entered(body):
 	if body is player:
 		if body.has_method("die"):
 			body.die()
-			print("ksmk")
 
 
 func _on_ScoreArea_body_exited(body):
