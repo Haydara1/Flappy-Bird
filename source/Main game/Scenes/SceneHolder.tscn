@@ -97,20 +97,13 @@ visible = false
 
 [node name="Main menu" parent="." instance=ExtResource( 2 )]
 
-[node name="YellowBird" parent="Main menu" index="0"]
-frame = 1
-
-[node name="BlueBird" parent="Main menu" index="1"]
-frame = 1
-
-[node name="GreenBird" parent="Main menu" index="2"]
-frame = 1
-
 [node name="SceneFade" type="Node2D" parent="."]
 
 [node name="BlackRect" type="ColorRect" parent="SceneFade"]
-margin_right = 477.0
-margin_bottom = 852.0
+margin_left = -11.0
+margin_top = -15.0
+margin_right = 493.0
+margin_bottom = 868.0
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -122,7 +115,11 @@ anims/SceneFade = SubResource( 2 )
 
 [connection signal="pressed" from="Choose_level/ClassicButton" to="." method="ClassicGame"]
 [connection signal="pressed" from="Choose_level/ReverseButton" to="." method="ReverseGame"]
+[connection signal="pressed" from="Choose_level/PathButton" to="." method="PathGame"]
 [connection signal="pressed" from="Main menu/Yellow" to="." method="_on_Yellow_pressed"]
+[connection signal="pressed" from="Main menu/Koopabtn" to="." method="_on_Koopabtn_pressed"]
+[connection signal="pressed" from="Main menu/Red" to="." method="_on_Red_pressed"]
+[connection signal="pressed" from="Main menu/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Main menu/Green" to="." method="_on_Green_pressed"]
 [connection signal="pressed" from="Main menu/Blue" to="." method="_on_Blue_pressed"]
 
