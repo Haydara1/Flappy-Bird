@@ -8,8 +8,10 @@ onready var menu_layer = $MenuLayer
 var greenBird = preload("res://assets/textures/GreenBird.png")
 var yellowBird = preload("res://assets/textures/bird.png")
 var blueBird = preload("res://assets/textures/BlueBird.png")
+var redBird = preload("res://assets/textures/RedBird.png")
+var koopa = preload("res://assets/textures/Koopa.png")
 
-const SAVE_FILE_PATH = "user://Reverse.save"
+const SAVE_FILE_PATH = "user://World.save"
 
 export var colour = ""
 
@@ -36,7 +38,7 @@ func _on_obstacle_created(obs):
 
 
 func _on_DeathZone_body_entered(body):
-	if body is reverse_player:
+	if body is player:
 		if body.has_method("die"):
 			body.die()
 
@@ -66,6 +68,10 @@ func setColour() -> void:
 		$player/Sprite.set_texture(yellowBird)
 	elif colour == "b":
 		$player/Sprite.set_texture(blueBird)
+	elif colour == "r":
+		$player/Sprite.set_texture(redBird)
+	elif colour == "k":
+		$player/Sprite.set_texture(koopa)
 
 func save_highscore():
 	var save_data = File.new()
