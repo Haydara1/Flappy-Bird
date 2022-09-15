@@ -26,7 +26,7 @@ func _physics_process(delta):
 		rotation_degrees = MAX_ROTATION_DEGREES 
 	
 	if linear_velocity.y < 0:
-		if rotation_degrees <= 180:
+		if rotation_degrees >= -90:
 			angular_velocity = -3
 		else:
 			angular_velocity = 0
@@ -50,4 +50,4 @@ func die():
 	animator.stop()
 	hit.play()
 	emit_signal("die")
-	
+	gravity_scale = -5
