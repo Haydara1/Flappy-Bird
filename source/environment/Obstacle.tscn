@@ -18,6 +18,9 @@ position = Vector2( 0, 75 )
 position = Vector2( 0, -75 )
 rotation = 3.14159
 
+[node name="Sprite" parent="Wall2" index="0"]
+flip_h = true
+
 [node name="ScoreArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
@@ -30,3 +33,5 @@ stream = ExtResource( 3 )
 [connection signal="body_entered" from="Wall" to="." method="_on_Wall_body_entered"]
 [connection signal="body_entered" from="Wall2" to="." method="_on_Wall_body_entered"]
 [connection signal="body_exited" from="ScoreArea" to="." method="_on_ScoreArea_body_exited"]
+
+[editable path="Wall2"]
