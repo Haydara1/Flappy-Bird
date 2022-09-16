@@ -4,17 +4,26 @@ var classicGame = preload("res://Main game/Scenes/World.tscn")
 var reverseGame = preload("res://Main game/Scenes/Reverse.tscn")
 var pathGame = preload("res://Main game/Scenes/Path.tscn")
 
-var credits = preload("res://SplashScreen.tscn")
+var nightBackground = preload("res://assets/textures/background-night.png")
 
+var credits = preload("res://SplashScreen.tscn")
 var colour = ""
+
+onready var animationPlayer = $SceneFade/BlackRect/AnimationPlayer
 
 signal HalfAnimation
 
 func _ready():
+	var hour = OS.get_time().hour
+	if hour >= 18 or hour < 6:
+		$Background.set_texture(nightBackground)
+	
 	play_scene_fade()
+	yield(self, "HalfAnimation")
+	$"Main menu".visible = true
 
 func play_scene_fade():
-	$SceneFade/BlackRect/AnimationPlayer.play("SceneFade")
+	animationPlayer.play("SceneFade")
 
 
 func _on_Yellow_pressed() -> void:
@@ -34,8 +43,8 @@ func _on_Koopabtn_pressed() -> void:
 	AddLevelChoosing()
 
 func _on_Red_pressed() -> void:
-	colour = "r"
 	AddLevelChoosing()
+	colour = "r"
 
 func AddLevelChoosing():
 	$"Main menu".visible = false
@@ -88,3 +97,7 @@ func HalfAnimatinon():
 
 func _on_Credits_pressed() -> void:
 	add_child(credits.instance())
+
+
+func _on_Exit_pressed() -> void:
+	get_tree().quit()
