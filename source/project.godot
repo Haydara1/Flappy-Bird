@@ -32,13 +32,15 @@ Quality/Use=false
 
 config/name="Flappy bird"
 run/main_scene="res://Main game/Scenes/SceneHolder.tscn"
+boot_splash/image="res://assets/textures/title.png"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=480
 window/size/height=854
-window/handheld/orientation="portrait"
+window/size/resizable=false
+window/handheld/orientation="sensor_portrait"
 window/stretch/mode="viewport"
 
 [global]
