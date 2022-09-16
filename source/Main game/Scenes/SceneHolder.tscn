@@ -96,6 +96,7 @@ centered = false
 visible = false
 
 [node name="Main menu" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="SceneFade" type="Node2D" parent="."]
 
@@ -117,9 +118,9 @@ anims/SceneFade = SubResource( 2 )
 [connection signal="pressed" from="Choose_level/ReverseButton" to="." method="ReverseGame"]
 [connection signal="pressed" from="Choose_level/PathButton" to="." method="PathGame"]
 [connection signal="pressed" from="Main menu/Yellow" to="." method="_on_Yellow_pressed"]
-[connection signal="pressed" from="Main menu/Koopabtn" to="." method="_on_Koopabtn_pressed"]
 [connection signal="pressed" from="Main menu/Red" to="." method="_on_Red_pressed"]
 [connection signal="pressed" from="Main menu/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Main menu/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Main menu/Green" to="." method="_on_Green_pressed"]
 [connection signal="pressed" from="Main menu/Blue" to="." method="_on_Blue_pressed"]
 
