@@ -15,7 +15,7 @@ onready var wing = $Wing
 var started = false
 var alive = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("flap") && alive:
 		if !started:
 			start()
