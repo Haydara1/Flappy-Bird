@@ -5,11 +5,14 @@ onready var obstacle_spawner = $ObstacleSpawner
 onready var ground = $Ground
 onready var menu_layer = $MenuLayer
 
+var over = false
+
 var greenBird = preload("res://assets/textures/GreenBird.png")
 var yellowBird = preload("res://assets/textures/bird.png")
 var blueBird = preload("res://assets/textures/BlueBird.png")
 var redBird = preload("res://assets/textures/RedBird.png")
-var koopa = preload("res://assets/textures/Koopa.png")
+
+var nightBackground = preload("res://assets/textures/background-night.png")
 
 const SAVE_FILE_PATH = "user://Path.save"
 
@@ -19,6 +22,9 @@ var score = 0 setget set_score
 var highscore = 0
 
 func _ready():
+	var hour = OS.get_time().hour
+	if hour >= 18 or hour < 6:
+		$Background.set_texture(nightBackground)
 	obstacle_spawner.connect("obstacle_created",self, "_on_obstacle_created")
 	load_highscore()
 
@@ -70,8 +76,6 @@ func setColour() -> void:
 		$player/Sprite.set_texture(blueBird)
 	elif colour == "r":
 		$player/Sprite.set_texture(redBird)
-	elif colour == "k":
-		$player/Sprite.set_texture(koopa)
 
 func save_highscore():
 	var save_data = File.new()
@@ -85,3 +89,7 @@ func load_highscore():
 		save_data.open(SAVE_FILE_PATH, File.READ)
 		highscore = save_data.get_32()
 		save_data.close()
+
+
+func _on_MenuLayer_over() -> void:
+	over = true
