@@ -30,6 +30,7 @@ position = Vector2( -3, 686 )
 position = Vector2( 115, 427 )
 
 [connection signal="script_changed" from="." to="." method="_on_World_script_changed"]
+[connection signal="over" from="MenuLayer" to="." method="_on_MenuLayer_over"]
 [connection signal="start_game" from="MenuLayer" to="." method="_on_MenuLayer_start_game"]
 [connection signal="body_entered" from="Ground/DeathZone" to="." method="_on_DeathZone_body_entered"]
 [connection signal="die" from="player" to="." method="_on_player_die"]
