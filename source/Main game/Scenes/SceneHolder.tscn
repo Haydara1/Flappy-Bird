@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main game/Scripts/SceneHolder.gd" type="Script" id=1]
 [ext_resource path="res://Main game/Scenes/Main menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=3]
 [ext_resource path="res://Main game/Scenes/Choose_level.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/smb3_text.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -114,12 +115,16 @@ __meta__ = {
 anims/RESET = SubResource( 1 )
 anims/SceneFade = SubResource( 2 )
 
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
 [connection signal="pressed" from="Choose_level/ClassicButton" to="." method="ClassicGame"]
 [connection signal="pressed" from="Choose_level/ReverseButton" to="." method="ReverseGame"]
 [connection signal="pressed" from="Choose_level/PathButton" to="." method="PathGame"]
 [connection signal="pressed" from="Main menu/Yellow" to="." method="_on_Yellow_pressed"]
 [connection signal="pressed" from="Main menu/Red" to="." method="_on_Red_pressed"]
 [connection signal="pressed" from="Main menu/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Main menu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Main menu/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Main menu/Green" to="." method="_on_Green_pressed"]
 [connection signal="pressed" from="Main menu/Blue" to="." method="_on_Blue_pressed"]
