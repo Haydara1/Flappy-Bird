@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw_game_over.wav-6d0222eb18704b4525ce866fdb530f44.sample"
+
+[deps]
+
+source_file="res://assets/audio/smw_game_over.wav"
+dest_files=[ "res://.import/smw_game_over.wav-6d0222eb18704b4525ce866fdb530f44.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
