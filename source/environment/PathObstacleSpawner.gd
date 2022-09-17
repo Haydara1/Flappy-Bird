@@ -18,7 +18,7 @@ func spawn_obstacle():
 	add_child(obstacle)
 	
 	if obstaclePosition == 0:
-		obstacle.position.y = randi() % 400 + 150
+		obstacle.position.y = randi() % 400 + 180
 	else:
 		obstacle.position.y = obstaclePosition + (randi() % 20) - (randi() % + 20)
 	
