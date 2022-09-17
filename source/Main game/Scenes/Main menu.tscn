@@ -150,6 +150,13 @@ margin_right = 280.0
 margin_bottom = 743.0
 text = "CREDITS"
 
+[node name="Settings" parent="." instance=ExtResource( 7 )]
+margin_left = 198.0
+margin_top = 638.0
+margin_right = 280.0
+margin_bottom = 673.0
+text = "SETTINGS"
+
 [node name="Exit" parent="." instance=ExtResource( 7 )]
 margin_left = 198.0
 margin_top = 777.0
