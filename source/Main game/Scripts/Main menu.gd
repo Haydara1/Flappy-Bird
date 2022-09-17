@@ -5,3 +5,4 @@ func _ready() -> void:
 	$GreenBird.playing = true
 	$BlueBird.playing = true
 	$RedBird.playing = true
+
