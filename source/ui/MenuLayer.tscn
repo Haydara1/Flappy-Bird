@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/textures/message.png" type="Texture" id=1]
 [ext_resource path="res://ui/MenuLayer.gd" type="Script" id=2]
 [ext_resource path="res://font/FlappyFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/textures/gameover.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/flappyfont.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/audio/smb3_text.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -111,6 +112,9 @@ __meta__ = {
 visible = false
 position = Vector2( 238, 339 )
 texture = ExtResource( 4 )
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="pressed" from="GameOverMenu/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GameOverMenu/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
