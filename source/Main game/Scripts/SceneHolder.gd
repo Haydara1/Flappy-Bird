@@ -6,10 +6,12 @@ var pathGame = preload("res://Main game/Scenes/Path.tscn")
 
 var nightBackground = preload("res://assets/textures/background-night.png")
 
+var settings = preload("res://Main game/Scenes/Settings.tscn")
 var credits = preload("res://SplashScreen.tscn")
 var colour = ""
 
 onready var animationPlayer = $SceneFade/BlackRect/AnimationPlayer
+onready var buttonPress = $ButtonPress
 
 signal HalfAnimation
 
@@ -17,6 +19,9 @@ func _ready():
 	var hour = OS.get_time().hour
 	if hour >= 18 or hour < 6:
 		$Background.set_texture(nightBackground)
+	
+	add_child(settings.instance())
+	remove_child(get_child(get_child_count() - 1))
 	
 	play_scene_fade()
 	yield(self, "HalfAnimation")
@@ -29,22 +34,22 @@ func play_scene_fade():
 func _on_Yellow_pressed() -> void:
 	colour = "y"
 	AddLevelChoosing()
+	buttonPress.play()
 
 func _on_Green_pressed() -> void:
 	colour = "g"
 	AddLevelChoosing()
+	buttonPress.play()
 
 func _on_Blue_pressed() -> void:
 	colour = "b"
 	AddLevelChoosing()
-
-func _on_Koopabtn_pressed() -> void:
-	colour = "k"
-	AddLevelChoosing()
+	buttonPress.play()
 
 func _on_Red_pressed() -> void:
 	AddLevelChoosing()
 	colour = "r"
+	buttonPress.play()
 
 func AddLevelChoosing():
 	$"Main menu".visible = false
@@ -53,6 +58,7 @@ func AddLevelChoosing():
 	$Choose_level.visible = true
 
 func ClassicGame():
+	buttonPress.play()
 	Physics2DServer.area_set_param(get_viewport().find_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2(0, 1))
 	play_scene_fade()
 	yield(self, "HalfAnimation")
@@ -63,6 +69,7 @@ func ClassicGame():
 	get_child(get_child_count() - 1).setColour()
 
 func ReverseGame():
+	buttonPress.play()
 	Physics2DServer.area_set_param(get_viewport().find_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2(0, -1))
 	play_scene_fade()
 	yield(self, "HalfAnimation")
@@ -73,6 +80,7 @@ func ReverseGame():
 	get_child(get_child_count() - 1).setColour()
 
 func PathGame():
+	buttonPress.play()
 	Physics2DServer.area_set_param(get_viewport().find_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2(0, 1))
 	play_scene_fade()
 	yield(self, "HalfAnimation")
@@ -96,8 +104,16 @@ func HalfAnimatinon():
 
 
 func _on_Credits_pressed() -> void:
+	buttonPress.play()
 	add_child(credits.instance())
 
 
 func _on_Exit_pressed() -> void:
+	buttonPress.play()
+	yield(buttonPress, "finished")
 	get_tree().quit()
+
+
+func _on_Settings_pressed() -> void:
+	buttonPress.play()
+	add_child(settings.instance())
