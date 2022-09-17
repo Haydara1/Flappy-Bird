@@ -5,6 +5,7 @@ const SAVE_FILE = "user://sound.save"
 var sound = 1
 
 func _ready():
+	$Bowser.playing = true
 	load_mute()
 	var pressed = false
 	if sound == 1:
