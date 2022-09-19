@@ -4,7 +4,7 @@ signal score
 
 onready var point = $point
 
-const SPEED = 250
+const SPEED = 215
 
 func _physics_process(delta):
 	position.x += -SPEED * delta

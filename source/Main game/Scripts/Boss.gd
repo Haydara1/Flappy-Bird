@@ -14,7 +14,7 @@ var redBird = preload("res://assets/textures/RedBird.png")
 
 var nightBackground = preload("res://assets/textures/background-night.png")
 
-const SAVE_FILE_PATH = "user://World.save"
+const SAVE_FILE_PATH = "user://Boss.save"
 
 export var colour = ""
 
